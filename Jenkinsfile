@@ -5,6 +5,7 @@ pipeline{
   }
   environment {
     NODEJS_HOME= 'C:\\Program Files\\nodejs'
+    SONAR_SCANNER_PATH = 'D:\sonar-scanner-6.2.1.4610-windows-x64\bin'
   }
 
       stages {
@@ -53,10 +54,10 @@ pipeline{
                 bat '''
                 set PATH=%SONAR_SCANNER_PATH%;%PATH%
                 where sonar-scanner || echo "SonarQube scanner not found. Please install it."
-                sonar-scanner -Dsonar.projectKey=sonar-web ^
+                sonar-scanner -Dsonar.projectKey=register
                     -Dsonar.sources=. ^
-                    -Dsonar.host.url=http://localhost:9000 ^
-                    -Dsonar.token=%SONAR_TOKEN% 2>&1
+                    -Dsonar.host.url=http://localhost:9000
+                    -Dsonar.token=sqp_0c176cfe99223a30ba833f5b435dc765168ca605
                 '''
             }
         }
