@@ -4,7 +4,7 @@ pipeline{
     nodejs 'nodejs'
   }
   environment {
-    NODEJS_HOME= 'C:\Program Files\nodejs'
+    NODEJS_HOME= 'C:\\Program Files\\nodejs'
   }
 
       stages {
